@@ -1,25 +1,26 @@
 from smtplib import SMTPDataError
-
 import requests
 from send_email import send_email
 
-topic = "nintendo"
+# you can choose the topic of news articles sent by entering a topic in the varialble below
+topic = "ENTER A TOPIC HERE"
 
-api_key = "962f77d727f94dc5b71f251f868edb02"
+# enter your api key below to create a working function. API key can be created at newsapi.org
+api_key = "ENTER_YOUR_API_KEY_HERE"
 url = ("https://newsapi.org/v2/everything?"
        f"q={topic}&"
        "from=2023-10-17&"
        "sortBy=publishedAt&"
-       "apiKey=962f77d727f94dc5b71f251f868edb02&"
+       "apiKey=ENTER_YOUR_API_KEY_HERE&"
        "language=en")
 
-# make request
+# makes request
 request = requests.get(url)
 
-# retrieve dictionary data
+# retrieve dictionary information
 content = request.json()
 
-# access articles titles and description
+# access articles titles and description, then sends an email via the send_email function
 try:
     body = ""
     for article in content["articles"][0:20]:

@@ -3,7 +3,7 @@ from smtplib import SMTPDataError
 import requests
 from send_email import send_email
 
-topic = "tesla"
+topic = "nintendo"
 
 api_key = "962f77d727f94dc5b71f251f868edb02"
 url = ("https://newsapi.org/v2/everything?"
